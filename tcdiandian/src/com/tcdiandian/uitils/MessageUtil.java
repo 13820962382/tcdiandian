@@ -1,5 +1,6 @@
 package com.tcdiandian.uitils;
 
+import com.sun.org.apache.xerces.internal.xs.XSTerm;
 import com.tcdiandian.model.TextMessage;
 import com.thoughtworks.xstream.XStream;
 import org.dom4j.Document;
@@ -34,6 +35,7 @@ public class MessageUtil {
         for (Element e:list) {
             map.put(e.getName(),e.getText());
         }
+        ins.close();
         return map;
     }
 

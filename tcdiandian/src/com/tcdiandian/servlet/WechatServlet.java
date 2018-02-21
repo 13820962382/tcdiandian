@@ -37,23 +37,18 @@ public class WechatServlet extends HttpServlet {
              String toUserName = (String) map.get("ToUserName");
              String fromUserName = (String) map.get("FromUserName");
              String msgType = (String) map.get("MsgType");
-             Long createTime= (Long) map.get("CreateTime");
+            // Long createTime= (Long) map.get("CreateTime");
              String message = null;
-             switch (msgType){
-                 case MESSAGE_TEXT:
-                     TextMessage textMessage = new TextMessage();
-                     textMessage.setFromUserName(toUserName);
-                     textMessage.setToUserName(fromUserName);
-                     textMessage.setMsgType("text");
-                     textMessage.setCreateTime(new Date().getTime());
-                     textMessage.setContent("请按提示操作");
-                     message = MessageUtil.textMessageToXml(textMessage);
-                     System.out.print(message);
-                     break;
-                 case MESSAGE_IMAGE:
-
-                     break;
+             if (msgType.equals("text")){
+                 TextMessage textMessage = new TextMessage();
+                 textMessage.setFromUserName(toUserName);
+                 textMessage.setToUserName(fromUserName);
+                 textMessage.setMsgType("text");
+                 textMessage.setCreateTime(new Date().getTime());
+                 textMessage.setContent("请按提示操作");
+                 message = MessageUtil.textMessageToXml(textMessage);
              }
+            System.out.println("1111");
             writer.print(message);
         } catch (DocumentException e) {
             e.printStackTrace();
@@ -72,6 +67,7 @@ public class WechatServlet extends HttpServlet {
 
         PrintWriter writer = response.getWriter();
         if (CheckUtil.checkSignature(signature,timestamp,nonce)){
+            System.out.print(echostr);
             writer.print(echostr);
         }
         writer.close();
