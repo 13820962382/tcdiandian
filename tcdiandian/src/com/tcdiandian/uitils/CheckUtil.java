@@ -7,7 +7,7 @@ public class CheckUtil {
 
     public static boolean checkSignature(String signature,String timestamp,String nonce){
 
-        String arr[] = new String[]{token,signature,timestamp,nonce};
+        String arr[] = new String[]{token,timestamp,nonce};
         Arrays.sort(arr);
         //拼接字符串
         StringBuffer content = new StringBuffer();
