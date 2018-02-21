@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.text.AbstractDocument;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Date;
@@ -37,18 +38,29 @@ public class WechatServlet extends HttpServlet {
              String toUserName = (String) map.get("ToUserName");
              String fromUserName = (String) map.get("FromUserName");
              String msgType = (String) map.get("MsgType");
-            // Long createTime= (Long) map.get("CreateTime");
+             String content = (String) map.get("Content");
              String message = null;
              if (msgType.equals("text")){
                  TextMessage textMessage = new TextMessage();
-                 textMessage.setFromUserName(toUserName);
-                 textMessage.setToUserName(fromUserName);
-                 textMessage.setMsgType("text");
-                 textMessage.setCreateTime(new Date().getTime());
                  textMessage.setContent("请按提示操作");
-                 message = MessageUtil.textMessageToXml(textMessage);
+//                 message = MessageUtil.messageToXml(toUserName,fromUserName,MESSAGE_TEXT,textMessage);
              }
-            System.out.println("1111");
+//            switch (msgType){
+//                case MESSAGE_TEXT:
+//                    TextMessage textMessage = new TextMessage();
+//                    if (content.equals("1")){
+//                        textMessage.setContent("您回复内容是：1、了解公众号开发");
+//                    }else if (content.equals("2")){
+//                        textMessage.setContent("您回复内容是：2、了解小程序开发");
+//                    }else if (content.equals("3")){
+//                        textMessage.setContent("您回复内容是：3、了解app开发");
+//                    }else if (content.equals("?")) {
+//                        textMessage.setContent(MessageUtil.autoAnswer());
+//                    }
+//                    message = MessageUtil.messageToXml(toUserName,fromUserName,MESSAGE_TEXT,textMessage);
+//                    break;
+//            }
+            System.out.println(message);
             writer.print(message);
         } catch (DocumentException e) {
             e.printStackTrace();

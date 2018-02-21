@@ -1,6 +1,7 @@
 package com.tcdiandian.uitils;
 
 import com.sun.org.apache.xerces.internal.xs.XSTerm;
+import com.tcdiandian.model.MessageBase;
 import com.tcdiandian.model.TextMessage;
 import com.thoughtworks.xstream.XStream;
 import org.dom4j.Document;
@@ -11,12 +12,12 @@ import org.dom4j.io.SAXReader;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class MessageUtil {
-
     /**
      * 将xml转换为map集合
      * @param request
@@ -40,15 +41,32 @@ public class MessageUtil {
     }
 
     /**
-     * 将text消息转为xml
-     * @param textMessage
+     * 将消息转为xml
+     * @param message
      * @return
      */
-    public static String textMessageToXml(TextMessage textMessage){
+    public static String messageToXml(String fromUserName, String toUserName,  String msgType, MessageBase message){
         XStream xStream = new XStream();
-        xStream.alias("xml",textMessage.getClass());
+        xStream.alias("xml",message.getClass());
+//        xStream.alias("xml",message.getClass());
+//        message.setFromUserName(toUserName);
+//        message.setToUserName(fromUserName);
+//        message.setMsgType(msgType);
+//        message.setCreateTime(new Date().getTime());
+        return xStream.toXML(message);
+    }
 
-        return xStream.toXML(textMessage);
-
+    /**
+     * 构建自动回复消息
+     * @return
+     */
+    public static String autoAnswer(){
+        StringBuffer stringBuffer = new StringBuffer();
+        stringBuffer.append("请按提示操作：\n\n");
+        stringBuffer.append("回复1、了解公众号开发\n\n");
+        stringBuffer.append("回复2、了解小程序开发\n\n");
+        stringBuffer.append("回复3、了解app开发\n\n");
+        stringBuffer.append("回复?、调出此菜单\n\n");
+        return stringBuffer.toString();
     }
 }
