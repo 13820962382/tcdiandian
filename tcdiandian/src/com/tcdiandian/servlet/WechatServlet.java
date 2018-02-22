@@ -35,31 +35,35 @@ public class WechatServlet extends HttpServlet {
         PrintWriter writer = response.getWriter();
         try {
             Map map = MessageUtil.xmlToMap(request);
-             String toUserName = (String) map.get("ToUserName");
-             String fromUserName = (String) map.get("FromUserName");
-             String msgType = (String) map.get("MsgType");
-             String content = (String) map.get("Content");
-             String message = null;
-             if (msgType.equals("text")){
-                 TextMessage textMessage = new TextMessage();
-                 textMessage.setContent("请按提示操作");
-//                 message = MessageUtil.messageToXml(toUserName,fromUserName,MESSAGE_TEXT,textMessage);
-             }
-//            switch (msgType){
-//                case MESSAGE_TEXT:
-//                    TextMessage textMessage = new TextMessage();
-//                    if (content.equals("1")){
-//                        textMessage.setContent("您回复内容是：1、了解公众号开发");
-//                    }else if (content.equals("2")){
-//                        textMessage.setContent("您回复内容是：2、了解小程序开发");
-//                    }else if (content.equals("3")){
-//                        textMessage.setContent("您回复内容是：3、了解app开发");
-//                    }else if (content.equals("?")) {
-//                        textMessage.setContent(MessageUtil.autoAnswer());
-//                    }
-//                    message = MessageUtil.messageToXml(toUserName,fromUserName,MESSAGE_TEXT,textMessage);
-//                    break;
-//            }
+            String toUserName = (String) map.get("ToUserName");
+            String fromUserName = (String) map.get("FromUserName");
+            String msgType = (String) map.get("MsgType");
+            String content = (String) map.get("Content");
+            String message = null;
+            switch (msgType){
+                //设置关键字回复
+                case MESSAGE_TEXT:
+                    TextMessage textMessage = new TextMessage();
+                    if (content.equals("1")){
+                        textMessage.setContent("您回复内容是：1、了解公众号开发");
+                    }else if (content.equals("2")){
+                        textMessage.setContent("您回复内容是：2、了解小程序开发");
+                    }else if (content.equals("3")){
+                        textMessage.setContent("您回复内容是：3、了解app开发");
+                    }else if (content.equals("?")) {
+                        textMessage.setContent(MessageUtil.autoAnswer());
+                    }else {
+                        writer.close();
+                    }
+                    message = MessageUtil.messageToXml(fromUserName,toUserName,MESSAGE_TEXT,textMessage);
+                    break;
+                case MESSAGE_SUBSCRIBE:
+                    //设置关注回复
+                    TextMessage subscribe = new TextMessage();
+                    subscribe.setContent(MessageUtil.autoAnswer());
+                    message = MessageUtil.messageToXml(fromUserName,toUserName,MESSAGE_TEXT,subscribe);
+                    break;
+            }
             System.out.println(message);
             writer.print(message);
         } catch (DocumentException e) {

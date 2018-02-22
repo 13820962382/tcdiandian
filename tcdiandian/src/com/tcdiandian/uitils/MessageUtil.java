@@ -48,11 +48,10 @@ public class MessageUtil {
     public static String messageToXml(String fromUserName, String toUserName,  String msgType, MessageBase message){
         XStream xStream = new XStream();
         xStream.alias("xml",message.getClass());
-//        xStream.alias("xml",message.getClass());
-//        message.setFromUserName(toUserName);
-//        message.setToUserName(fromUserName);
-//        message.setMsgType(msgType);
-//        message.setCreateTime(new Date().getTime());
+        message.setFromUserName(toUserName);
+        message.setToUserName(fromUserName);
+        message.setMsgType(msgType);
+        message.setCreateTime(new Date().getTime());
         return xStream.toXML(message);
     }
 
@@ -66,7 +65,7 @@ public class MessageUtil {
         stringBuffer.append("回复1、了解公众号开发\n\n");
         stringBuffer.append("回复2、了解小程序开发\n\n");
         stringBuffer.append("回复3、了解app开发\n\n");
-        stringBuffer.append("回复?、调出此菜单\n\n");
+        stringBuffer.append("回复 ? 调出此菜单\n\n");
         return stringBuffer.toString();
     }
 }
