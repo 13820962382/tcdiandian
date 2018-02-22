@@ -62,10 +62,10 @@ public class MessageUtil {
     public static String autoAnswer(){
         StringBuffer stringBuffer = new StringBuffer();
         stringBuffer.append("请按提示操作：\n\n");
-        stringBuffer.append("回复1、了解公众号开发\n\n");
-        stringBuffer.append("回复2、了解小程序开发\n\n");
-        stringBuffer.append("回复3、了解app开发\n\n");
-        stringBuffer.append("回复 ? 调出此菜单\n\n");
+        stringBuffer.append("回复 \"1\"了解公众号开发\n\n");
+        stringBuffer.append("回复 \"2\"了解小程序开发\n\n");
+        stringBuffer.append("回复 \"3\"了解app开发\n\n");
+        stringBuffer.append("回复 \"?\" 调出此菜单\n\n");
         return stringBuffer.toString();
     }
 }

@@ -18,16 +18,16 @@ import java.util.Map;
 
 @WebServlet(name = "WechatServlet")
 public class WechatServlet extends HttpServlet {
-    public static final String MESSAGE_TEXT = "text";
-    public static final String MESSAGE_IMAGE = "image";
-    public static final String MESSAGE_VOICE= "voice";
-    public static final String MESSAGE_VIDEO = "video";
-    public static final String MESSAGE_LINK = "link";
-    public static final String MESSAGE_LOCATION = "location";
-    public static final String MESSAGE_SUBSCRIBE = "subscribe";
-    public static final String MESSAGE_UNSUBSCRIBE = "unsubscribe";
-    public static final String MESSAGE_EVEN = "even";
-    public static final String MESSAGE_VIEW = "view";
+    private static final String MESSAGE_TEXT = "text";
+    private static final String MESSAGE_IMAGE = "image";
+    private static final String MESSAGE_VOICE= "voice";
+    private static final String MESSAGE_VIDEO = "video";
+    private static final String MESSAGE_LINK = "link";
+    private static final String MESSAGE_LOCATION = "location";
+    private static final String MESSAGE_SUBSCRIBE = "subscribe";
+    private static final String MESSAGE_UNSUBSCRIBE = "unsubscribe";
+    private static final String MESSAGE_EVEN = "even";
+    private static final String MESSAGE_VIEW = "view";
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
@@ -50,7 +50,7 @@ public class WechatServlet extends HttpServlet {
                         textMessage.setContent("您回复内容是：2、了解小程序开发");
                     }else if (content.equals("3")){
                         textMessage.setContent("您回复内容是：3、了解app开发");
-                    }else if (content.equals("?")) {
+                    }else if (content.equals("？")||content.equals("?")) {
                         textMessage.setContent(MessageUtil.autoAnswer());
                     }else {
                         writer.close();
