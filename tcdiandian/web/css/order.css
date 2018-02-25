@@ -1,0 +1,111 @@
+@charset "utf-8";
+*{
+	margin:0;
+	padding:0;
+}
+.order{
+	margin:0 auto;
+}
+.order .left{
+	width:1200px;
+	float:left;
+	margin-bottom: 15px;
+}
+.order .left dl{
+	padding: 0 0 15px 0;
+}
+.order .left dl dd{
+	height:50px;
+	line-height:50px;
+	clear:both;
+	border-bottom: 1px dotted #CCC;
+	width: 100%;
+}
+.order .left dl dd.pro{
+	height:auto;
+}
+.order .left dl dd.pro span.protext,.order .left dl dd.pro span.prolist{
+	float:left;
+}
+.order .left dl dd.pro span.prolist{
+	width:730px;
+	padding-left: 10px;
+}
+.order .left dl dd.pro label{
+	display:inline-block;
+}
+.order .left dl dd input.text{
+	width:443px;
+	height:48px;
+	padding-left: 10px;
+	border:1px solid #fff;
+}
+.order .left dl dd input.text2{
+	width:200px;
+	padding-left: 10px;
+	height:48px;
+	border:1px solid #fff;
+}
+.order .left dl dd.textarea{
+	height:87px;
+
+}
+.order .left dl dd.textarea span{
+	vertical-align:top;
+}
+.order .left dl dd.textarea textarea{
+	width:443px;
+	height:85px;
+	border:1px solid #fff;
+	padding-left: 10px;
+	resize:none;
+}
+.order .left dl dd.submit{
+	text-align:center;
+	margin:10px 0;
+}
+.order .left dl dd.submit input{
+	width:200px;
+	height:40px;
+	border:none;
+	cursor:pointer;
+	color:#FFF;
+	font-weight:bold;
+	font:120% Microsoft YaHei, 微软雅黑, SimSun, 宋体, Arial, Verdana;
+}
+.order .left dl dd.submit img{
+	cursor:pointer;
+}
+.order .left dl dd select{
+	height:25px;
+	font-size:14px;
+	border:1px solid #666;
+}
+.order .left dl dd.pro select{
+	width:445px;
+}
+
+.order .left dl #aa select{
+	width:142px;
+	margin-left: 10px;
+}
+.order .left dl #bb{
+	line-height:27px;
+}
+.order .left dl dd.verify{
+	height:auto;
+}
+.order .left dl dd.verify span{
+	vertical-align:top;
+}
+.order .left dl dd.verify img{
+	cursor:pointer;
+}
+.order .left dl dd.info{
+	border:2px solid red;
+	text-align:center;
+}
+.order .left .buy,.order .right .send{
+	padding:8px 0 6px 0;
+	height:50px;
+}

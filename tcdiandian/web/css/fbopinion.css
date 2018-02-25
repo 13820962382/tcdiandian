@@ -1,0 +1,46 @@
+@charset "utf-8";
+.tab-title{
+    float: left;
+}
+.alt{
+    background: #dddddd;
+}
+.ans {
+    position: relative;
+    line-height: 40px;
+    float: left;
+}
+.ans span{ margin-left: 5px!important;}
+.ans input[type="radio"] {
+    width: 15px;
+    height: 15px;
+    opacity: 0;
+}
+
+.ans label {
+    position: absolute;
+    left: 0px;
+    top: 12px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 1px solid #999;
+}
+
+.ans input:checked+label {
+    background-color: #fe6d32;
+    border: 1px solid #fe6d32;
+}
+
+input:checked+label::after {
+    position: absolute;
+    content: "";
+    width: 5px;
+    height: 10px;
+    top: 0px;
+    left: 4px;
+    border: 2px solid #fff;
+    border-top: none;
+    border-left: none;
+    transform: rotate(45deg)
+}
