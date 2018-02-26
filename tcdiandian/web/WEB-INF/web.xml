@@ -5,13 +5,23 @@
          version="3.1">
     <display-name>tcdiandian</display-name>
     <servlet>
-        <servlet-name>wechatServlet</servlet-name>
-        <servlet-class>com.tcdiandian.servlet.WechatServlet</servlet-class>
-    </servlet>
-    
+    <servlet-name>wechatServlet</servlet-name>
+    <servlet-class>com.tcdiandian.servlet.WechatServlet</servlet-class>
+</servlet>
+
     <servlet-mapping>
         <servlet-name>wechatServlet</servlet-name>
         <url-pattern>/check</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>getFormServlet</servlet-name>
+        <servlet-class>com.tcdiandian.servlet.GetFormServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>getFormServlet</servlet-name>
+        <url-pattern>/get</url-pattern>
     </servlet-mapping>
 
 </web-app>
