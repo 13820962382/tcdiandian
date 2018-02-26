@@ -371,7 +371,7 @@
         <dd class="textarea"><span class="alt" style="height: 87px;">申请用途：</span><textarea name="note" placeholder="请输入申请用途" datatype="note" errormsg="申请用途不得大于250位！"></textarea>
         </dd>
         <!--<dd class="info info1">请认真填写以上信息，然后点击下面的“立即提交订单”按钮以完成下单</dd>-->
-        <dd class="submit" style=" border: none;">&nbsp;&nbsp;<input  id="btn" type="submit" name="submit1" value="立即提交申请" onclick="submit(this)"></dd>
+        <dd class="submit" style=" border: none;">&nbsp;&nbsp;<input  id="btn" type="submit" name="submit1" value="立即提交申请"></dd>
       </dl>
     </form>
 
@@ -396,6 +396,7 @@
             }else {
                 return true;
             }
+            return false
         }
 
         function submit(event) {
