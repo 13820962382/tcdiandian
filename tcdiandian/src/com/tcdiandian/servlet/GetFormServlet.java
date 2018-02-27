@@ -20,7 +20,7 @@ public class GetFormServlet extends HttpServlet {
         formMode.setAddress(request.getParameter("address"));
         formMode.setRequestType(request.getParameter("pid"));
         formMode.setUseName(request.getParameter("company_s"));
-        formMode.setPhoneNum(request.getParameter("tel"));
+        formMode.setPhoneNum(request.getParameter("phone"));
         formMode.setDescribe(request.getParameter("note"));
 
         if (formMode.getRequestType()!=null&&formMode.getPhoneNum().length()!=0&&formMode.getUseName().length()!=0&&formMode.getDescribe().length()!=0){

@@ -420,7 +420,7 @@
             // var form = document.getElementsByTagName("form")
 
             checkbox1.onclick =function () {
-                if (checkbox1.checked==true) {
+                if (checkbox1.checked==true) {a
                     content1.style.display = "block"
                     content2.style.display = "none"
                 } else {

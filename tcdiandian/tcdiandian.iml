@@ -23,5 +23,6 @@
     <orderEntry type="library" scope="PROVIDED" name="Tomcat 8.5.27" level="application_server_libraries" />
     <orderEntry type="library" name="commons-beanutils-1.8.0" level="project" />
     <orderEntry type="library" name="lib" level="project" />
+    <orderEntry type="library" name="mysql-connector-java-5.1.45-bin" level="project" />
   </component>
 </module>
