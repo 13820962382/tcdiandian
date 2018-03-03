@@ -22,6 +22,18 @@ public class WechatTest {
 //            System.out.println(menu);
 //            System.out.println(""+result.getString("errmsg")+result.getString("errcode"));
 //        }
+        for (int i = 0; i < 5; i++) {
+            GetFormMode formMode = new GetFormMode();
+            formMode.setAddress("个人");
+            formMode.setCompany("点点网");
+            formMode.setRequestType("小程序");
+            formMode.setUseName("第"+i+"个");
+            formMode.setPhoneNum("12345678910");
+            formMode.setAddress("测试"+i);
+            DbUtil.addData(formMode);
+        }
+
+
 
         List list = DbUtil.queryData();
         for (int i = 0; i < list.size(); i++) {

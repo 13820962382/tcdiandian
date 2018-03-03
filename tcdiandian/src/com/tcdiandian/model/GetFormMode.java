@@ -3,9 +3,18 @@ package com.tcdiandian.model;
 public class GetFormMode {
     private String address ;
     private String requestType;
+    private String company;
     private String useName;
     private String phoneNum;
     private String describe;
+
+    public String getCompany() {
+        return company;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
+    }
 
     public String getAddress() {
         return address;

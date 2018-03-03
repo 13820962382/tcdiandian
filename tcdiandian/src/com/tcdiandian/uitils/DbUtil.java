@@ -35,16 +35,17 @@ public class DbUtil {
         Connection connection = getConnection();
         //拼接sql字符串
         String sql = "INSERT INTO tcdiandain_form "+
-                "(address,usename,phone,type,describe)"+
-                "value(?,?,?,?,?)";
+                "(address,useName,company,phoneNum,requestType,desbe)"+
+                "value(?,?,?,?,?,?)";
         try {
             //执行sql语句
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setString(1,formMode.getAddress());
-            statement.setString(2,formMode.getUseName());
-            statement.setString(3,formMode.getPhoneNum());
-            statement.setString(4,formMode.getRequestType());
-            statement.setString(5,formMode.getDescribe());
+            statement.setString(2,formMode.getCompany());
+            statement.setString(3,formMode.getUseName());
+            statement.setString(4,formMode.getPhoneNum());
+            statement.setString(5,formMode.getRequestType());
+            statement.setString(6,formMode.getDescribe());
 
             statement.execute();
 
@@ -64,12 +65,20 @@ public class DbUtil {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(sql);
             while (resultSet.next()){
+//                GetFormMode formMode = new GetFormMode();
+//                formMode.setAddress(resultSet.getString("address"));
+//                formMode.setUseName(resultSet.getString("usename"));
+//                formMode.setUseName(resultSet.getString("company"));
+//                formMode.setPhoneNum(resultSet.getString("phone"));
+//                formMode.setRequestType(resultSet.getString("type"));
+//                formMode.setDescribe(resultSet.getString("describe"));
                 GetFormMode formMode = new GetFormMode();
                 formMode.setAddress(resultSet.getString("address"));
-                formMode.setUseName(resultSet.getString("usename"));
-                formMode.setPhoneNum(resultSet.getString("phone"));
-                formMode.setRequestType(resultSet.getString("type"));
-                formMode.setDescribe(resultSet.getString("describe"));
+                formMode.setUseName(resultSet.getString("useName"));
+                formMode.setUseName(resultSet.getString("company"));
+                formMode.setPhoneNum(resultSet.getString("phoneNum"));
+                formMode.setRequestType(resultSet.getString("requestType"));
+                formMode.setDescribe(resultSet.getString("desbe"));
                 list.add(formMode);
             }
 
