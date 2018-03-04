@@ -5,6 +5,7 @@
   Time: 10:44
   To change this template use File | Settings | File Templates.
 --%>
+<!doctype html>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -63,10 +64,8 @@
     }
     links[last].className = "here";
 </script>
-<%--<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/main.css">--%>
-<%--<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/swiper.min.css">--%>
-<link rel="stylesheet" type="text/css" href="/css/main.css">
-<link rel="stylesheet" type="text/css" href="/css/swiper.min.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/main.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/swiper.min.css">
 
 <style>    .tab-total div {
   display: none;
@@ -105,8 +104,7 @@
   <div class="swiper-button-next b-button-next"></div>
   <div class="swiper-button-prev b-button-prev"></div>
 </div>
-<%--<script src="${pageContext.request.contextPath}/js/swiper.min.js" type="text/javascript"></script>--%>
-<script src="/js/swiper.min.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/swiper.min.js" type="text/javascript"></script>
 <script>
     var swiper = new Swiper('.swpier-banner', {
         pagination: '.b-pagination',
@@ -164,7 +162,7 @@
 
 <div class="order">
   <div class="left">
-    <form method="post" action="http://localhost:8080/get" class="form" name="form1" onsubmit="return check(this)">
+    <form method="post" action="${pageContext.request.contextPath}/get" class="form" name="form1" onsubmit="return check(this)">
       <dl>
         <input type="hidden" name="tid" value="1">
         <input type="hidden" name="referrer" value="">
@@ -172,7 +170,7 @@
         <dd id="tab-title"><span class="alt">账号主体：</span>
           <div class="ans" style=" margin-left: 10px;">
             <input id="item1" style="width: 13px; height: 13px;" type="radio" onblur="blurchange('address')"
-                   name="address" value="个体户" checked>
+                   name="address" value="个体户">
             <label for="item1"></label>
             <span>个体户</span>
           </div>
@@ -190,48 +188,48 @@
             <dd class="pro" style=" height: 200px;">
               <span class="protext alt" style=" height: 200px;">申请类型：</span>
               <span class="prolist">
-     <label><input type="radio" name="pid" value="1" price="288" datatype="pid">
+     <label><input type="radio" name="pid" value="微信公众号（服务号）" price="288" datatype="pid">
 微信公众号（服务号）
      </label>
-    <label><input type="radio" name="pid" value="8" price="399" datatype="pid">
+    <label><input type="radio" name="pid" value="小程序名称抢注（赠送推广名片小程序）" price="399" datatype="pid">
 小程序名称抢注（赠送推广名片小程序）
      </label>
-     <label><input type="radio" name="pid" value="2" price="500" datatype="pid">
+     <label><input type="radio" name="pid" value="附近的小程序（普通门店小程序）" price="500" datatype="pid">
 附近的小程序（普通门店小程序）
      </label>
 <label>
-<input type="radio" name="pid" value="5" price="1688" datatype="pid">
+<input type="radio" name="pid" value="附近的小程序（高级门店小程序）" price="1688" datatype="pid">
 附近的小程序（高级门店小程序）
      </label>
 <label>
-<input type="radio" name="pid" value="10" price="999" datatype="pid">
+<input type="radio" name="pid" value="附近的小程序（企程序企业版小程序）" price="999" datatype="pid">
 附近的小程序（企程序企业版小程序）
 </label>
 
 <label>
-<input type="radio" name="pid" value="11" price="1688" datatype="pid">
+<input type="radio" name="pid" value="附近的小程序（餐饮美食高级店）" price="1688" datatype="pid">
 附近的小程序（餐饮美食高级店）
 </label>
 
 
 <label>
-<input type="radio" name="pid" value="12" price="1688" datatype="pid">
+<input type="radio" name="pid" value="附近的小程序（商超便利高级店）" price="1688" datatype="pid">
 附近的小程序（商超便利高级店）
 </label>
 
 <label>
-<input type="radio" name="pid" value="13" price="1688" datatype="pid">
+<input type="radio" name="pid" value="附近的小程序（服饰箱包高级店）" price="1688" datatype="pid">
 附近的小程序（服饰箱包高级店）
 </label>
 
 <label>
-<input type="radio" name="pid" value="14" price="1688" datatype="pid">
+<input type="radio" name="pid" value="附近的小程序（美妆护理高级店）" price="1688" datatype="pid">
 附近的小程序（美妆护理高级店）
 </label>
 
 
 <label>
-<input type="radio" name="pid" value="15" price="1688" datatype="pid">
+<input type="radio" name="pid" value="附近的小程序（生鲜果蔬高级店）" price="1688" datatype="pid">
 附近的小程序（生鲜果蔬高级店）
 </label>
      <br>
@@ -262,104 +260,7 @@
 
           </div>
         </div>
-        <input type="hidden" name="count" value="1">
-        <input type="hidden" name="qqau" value="1">
 
-        <div id="yzcname">
-          <dd style="display: none;"><span class="alt">预注册公众号名：</span>
-            <input type="text" class="text" placeholder="请输入预注册名称">
-
-          </dd>
-          <dd style="display: none;"><span class="alt">小程序名称抢注：</span>
-            <input type="text" class="text" placeholder="请输入小程序名称抢注">
-
-          </dd>
-          <dd style="display: none;"><span class="alt">预注册小程序名：</span>
-            <input type="text" class="text" placeholder="请输入预注册名称">
-
-          </dd>
-          <dd style="display: none;"><span class="alt">预注册小程序名：</span>
-            <input type="text" class="text" placeholder="请输入预注册名称">
-
-          </dd>
-          <dd style="display: none;"><span class="alt">预注册小程序名：</span>
-            <input type="text" class="text" placeholder="请输入预注册名称">
-
-          </dd>
-          <dd style="display: none;"><span class="alt">预注册小程序名：</span>
-            <input type="text" class="text" placeholder="请输入预注册名称">
-
-          </dd>
-          <dd style="display: none;"><span class="alt">预注册小程序名：</span>
-            <input type="text" class="text" placeholder="请输入预注册名称">
-
-          </dd>
-          <dd style="display: none;"><span class="alt">预注册小程序名：</span>
-            <input type="text" class="text" placeholder="请输入预注册名称">
-
-          </dd>
-          <dd style="display: none;"><span class="alt">预注册小程序名：</span>
-            <input type="text" class="text" placeholder="请输入预注册名称">
-
-          </dd>
-          <dd style="display: none;"><span class="alt">预注册小程序名：</span>
-            <input type="text" class="text" placeholder="请输入预注册名称">
-
-          </dd>
-          <dd style="display: none;"><span class="alt">预注册公众号名：</span>
-            <input type="text" class="text" placeholder="请输入预注册名称">
-
-          </dd>
-          <dd style="display: none;"><span class="alt">小程序名称抢注：</span>
-            <input type="text" class="text" placeholder="请输入小程序名称抢注">
-
-          </dd>
-          <dd style="display: none;"><span class="alt">预注册小程序名：</span>
-            <input type="text" style="width: 56%" class="text" placeholder="请输入预注册名称">
-
-          </dd>
-          <dd style="display: none;"><span class="alt">预注册小程序名：</span>
-            <input type="text" class="text" placeholder="请输入预注册名称">
-
-          </dd>
-          <dd style="display: none;"><span class="alt">预注册小程序名：</span>
-            <input type="text" class="text" placeholder="请输入预注册名称">
-
-          </dd>
-          <dd style="display: none;"><span class="alt">预注册小程序名：</span>
-            <input type="text" class="text" placeholder="请输入预注册名称">
-
-          </dd>
-          <dd style="display: none;"><span class="alt">预注册小程序名：</span>
-            <input type="text" class="text" placeholder="请输入预注册名称">
-
-          </dd>
-          <dd style="display: none;"><span class="alt">预注册小程序名：</span>
-            <input type="text" class="text" placeholder="请输入预注册名称">
-
-          </dd>
-          <dd style="display: none;"><span class="alt">预注册小程序名：</span>
-            <input type="text" class="text" placeholder="请输入预注册名称">
-
-          </dd>
-          <dd style="display: none;"><span class="alt">预注册小程序名：</span>
-            <input type="text" class="text" placeholder="请输入预注册名称">
-
-          </dd>
-          <dd style="display: none;"><span class="alt">预注册公众号名：</span>
-            <input type="text" style="width: 56%" class="text" placeholder="请输入预注册名称">
-
-          </dd>
-          <dd style="display: none;"><span class="alt">小程序名称抢注：</span>
-            <input type="text" class="text" placeholder="请输入小程序名称抢注">
-
-          </dd>
-          <dd style="display: none;"><span class="alt">预注册小程序名：</span>
-            <input type="text" class="text" placeholder="请输入预注册名称">
-
-          </dd>
-
-        </div>
         <dd><span class="alt">联系人：</span><input placeholder="请输入联系人姓名" type="text" name="name" class="text"
                                                 datatype="name" nullmsg="请填写姓名！" errormsg="姓名不得小于2位或大于20位！">
         </dd>
@@ -368,70 +269,62 @@
                                                 errormsg="联系电话必须是数字和-号，且不得小于7位或大于20位！">
         </dd>
 
-        <dd style="display:none;"><span class="alt">电子邮箱：</span><input placeholder="请输入电子邮箱" type="text" name="email" class="text" datatype="email" errormsg="电子邮箱格式不合法！">
+        <dd style="display:none;"><span class="alt">电子邮箱：</span><input placeholder="请输入电子邮箱" type="text"
+                                                                       name="email" class="text"
+                                                                       datatype="email" errormsg="电子邮箱格式不合法！">
         </dd>
-        <dd class="textarea"><span class="alt" style="height: 87px;">申请用途：</span><textarea name="note" placeholder="请输入申请用途" datatype="note" errormsg="申请用途不得大于250位！"></textarea>
+        <dd class="textarea"><span class="alt" style="height: 87px;">申请用途：</span><textarea name="note"
+                                                                                           placeholder="请输入申请用途"
+                                                                                           datatype="note"
+                                                                                           errormsg="申请用途不得大于250位！"></textarea>
         </dd>
         <!--<dd class="info info1">请认真填写以上信息，然后点击下面的“立即提交订单”按钮以完成下单</dd>-->
-        <dd class="submit" style=" border: none;">&nbsp;&nbsp;<input  id="btn" type="submit" name="submit1" value="立即提交申请"></dd>
+        <dd class="submit" style=" border: none;">&nbsp;&nbsp;<input
+                type="submit" name="submit1" value="立即提交申请"></dd>
       </dl>
     </form>
 
     <script type="text/javascript">
         function check(form) {
-            if (form.pid.value.length == 0) {
+
+            if (form.pid.value == '') {
                 alert("请选择申请类型!");
                 form.userId.focus();
                 return false;
-            }else if (form.company_s.value.length == 0) {
-                alert("请输入商户名称!");
-                form.userId.focus();
-                return false;
-            }else if (form.name.value.length == 0) {
+            }
+
+            if (form.name.value == '') {
                 alert("请输入姓名!");
                 form.name.focus();
                 return false;
-            }else if (form.tel.value.length != 11 || isNaN(form.tel.value)) {
+            }
+
+            if (form.tel.value == '') {
                 alert("请输入11数字电话!");
                 form.name.focus();
                 return false;
-            }else {
-                return true;
             }
-            return false
-        }
+            var lee = document.forms["form1"].lee;
+            if (lee.checked == true) {
+            }
+            else {
+                alert('须同意代申请服务协议方可下单');
+                return false;
+            }
 
-        function submit(event) {
-            var form = document.getElementsByClassName("form1")
-            alert("获取form表单");
-            if (check(form)==false){
-                var event = event || window.event;
-                event.preventDefault(); // 兼容标准浏览器
-                window.event.returnValue = false; // 兼容IE6~8
-            }
-        };
+            return true;
+        }
     </script>
     <script>
+
         window.onload = function () {
             var title = document.getElementById("ans")
             var content1 = document.getElementById("content-item1")
             var content2 = document.getElementById("content-item2")
             var checkbox1 = document.getElementById("item1")
             var checkbox2 = document.getElementById("item2")
-            // var submitBtn = document.getElementById("btn");
-            // var form = document.getElementsByTagName("form")
-
+            checkbox1.checked = true;
             checkbox1.onclick =function () {
-                if (checkbox1.checked==true) {a
-                    content1.style.display = "block"
-                    content2.style.display = "none"
-                } else {
-                    content1.style.display = "none"
-                    content2.style.display = "block"
-                }
-            }
-
-            checkbox2.onclick =function () {
                 if (checkbox1.checked==true) {
                     content1.style.display = "block"
                     content2.style.display = "none"
@@ -440,20 +333,32 @@
                     content2.style.display = "block"
                 }
             }
+            checkbox2.onclick =function () {
+                if (checkbox2.checked==false) {
+                    content1.style.display = "block"
+                    content2.style.display = "none"
+                } else {
+                    content1.style.display = "none"
+                    content2.style.display = "block"
+            }
+            }
         }
 
         $('#tab-title input').click(function () {
             $("#tab-content > div").hide().eq($('#tab-title input').index(this)).show();
             $("#tab-total > div").hide().eq($('#tab-title input').index(this)).hide();
             $("#yzcname > dd").hide().eq($('#tab-title input').index(this)).hide();
+
         });
+
 
         $('#tab-content label').click(function () {
             $("#tab-total > div").show().eq($('#tab-content label').index(this)).show();
             $("#yzcname > dd").hide().eq($('#tab-content label').index(this)).show();
             $("#yzcname > dd input").attr("name", "1").eq($('#tab-content label').index(this)).attr("name", "post");
-        });
 
+
+        });
     </script>
   </div>
 </div>

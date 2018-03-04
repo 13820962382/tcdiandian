@@ -31,11 +31,15 @@ public class DbUtil {
         return connection;
     }
 
+    /**
+     * 添加表单数据导数据库
+     * @param formMode
+     */
     public static void  addData(GetFormMode formMode){
         Connection connection = getConnection();
         //拼接sql字符串
         String sql = "INSERT INTO tcdiandain_form "+
-                "(address,useName,company,phoneNum,requestType,desbe)"+
+                "(address,company,useName,phoneNum,requestType,desbe)"+
                 "value(?,?,?,?,?,?)";
         try {
             //执行sql语句
@@ -55,6 +59,10 @@ public class DbUtil {
 
     }
 
+    /**
+     * 查询表单数据
+     * @return
+     */
     public static List queryData(){
         Connection connection = getConnection();
 
@@ -65,17 +73,10 @@ public class DbUtil {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(sql);
             while (resultSet.next()){
-//                GetFormMode formMode = new GetFormMode();
-//                formMode.setAddress(resultSet.getString("address"));
-//                formMode.setUseName(resultSet.getString("usename"));
-//                formMode.setUseName(resultSet.getString("company"));
-//                formMode.setPhoneNum(resultSet.getString("phone"));
-//                formMode.setRequestType(resultSet.getString("type"));
-//                formMode.setDescribe(resultSet.getString("describe"));
                 GetFormMode formMode = new GetFormMode();
                 formMode.setAddress(resultSet.getString("address"));
+                formMode.setCompany(resultSet.getString("company"));
                 formMode.setUseName(resultSet.getString("useName"));
-                formMode.setUseName(resultSet.getString("company"));
                 formMode.setPhoneNum(resultSet.getString("phoneNum"));
                 formMode.setRequestType(resultSet.getString("requestType"));
                 formMode.setDescribe(resultSet.getString("desbe"));

@@ -21,8 +21,6 @@
   <meta name="application-name" content="屯昌点点网">
   <meta name="msapplication-tooltip" content="屯昌点点网">
 
-  <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/order.css">
-  <%--<link rel="stylesheet" href="http://weike.hualianxin.com/source/plugin/hlx_gd/statics/css/form.css">--%>
   <style type="text/css">
   .box  {
     width: 100%;
@@ -36,132 +34,11 @@
     text-align: center;
   }
 
-  .top_box .top_menu > ul > li {
-    padding: 0 15px;
-  }
-
   </style>
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/fbopinion.css">
 </head>
 <body id="nv_portal" class="pg_index" onkeydown="if(event.keyCode==27) return false;" style="">
-<script type="text/javascript" language="javascript">
-    var nav = document.getElementById("navi");
-    var links = nav.getElementsByTagName("li");
-    var lilen = nav.getElementsByTagName("a");
-    var currenturl = document.location.href;
-    var last = 0;
-    for (var i = 0; i < links.length; i++) {
-        var linkurl = lilen[i].getAttribute("href");
-        if (currenturl.indexOf(linkurl) != -1) {
-            last = i;
-        }
-    }
-    links[last].className = "here";
-</script>
-<%--<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/main.css">--%>
-<%--<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/swiper.min.css">--%>
-<link rel="stylesheet" type="text/css" href="/css/main.css">
-<link rel="stylesheet" type="text/css" href="/css/swiper.min.css">
-
-<style>    .tab-total div {
-  display: none;
-}
-
-#yzcname dd {
-  display: none;
-}
-.apple a, .aa a {
-  width: 100%;
-  height: 20px;
-  line-height: 20px;
-  text-indent: 20px;
-  color: #949494;
-}
-</style>
-<!-- banner滚动 -->
-<div class="swiper-container swpier-banner swiper-container-horizontal">
-  <div class="swiper-wrapper" style="transform: translate3d(-2306px, 0px, 0px); transition-duration: 0ms;">
-    <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="2"
-         style="width: 1123px; margin-right: 30px;"><img src="${pageContext.request.contextPath}/images/banner1.jpg"></div>
-    <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="0"
-         style="width: 1123px; margin-right: 30px;"><img src="${pageContext.request.contextPath}/images/banner3.jpg"></div>
-    <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="1"
-         style="width: 1123px; margin-right: 30px;"><img src="${pageContext.request.contextPath}/images/banner2.jpg"></div>
-    <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="2"
-         style="width: 1123px; margin-right: 30px;"><img src="${pageContext.request.contextPath}/images/banner1.jpg"></div>
-    <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="0"
-         style="width: 1123px; margin-right: 30px;"><img src="${pageContext.request.contextPath}/images/banner3.jpg"></div>
-  </div>
-  <!-- Add Pagination -->
-  <div class="swiper-pagination b-pagination swiper-pagination-clickable swiper-pagination-bullets"><span
-          class="swiper-pagination-bullet"></span><span
-          class="swiper-pagination-bullet swiper-pagination-bullet-active"></span><span
-          class="swiper-pagination-bullet"></span></div>
-  <div class="swiper-button-next b-button-next"></div>
-  <div class="swiper-button-prev b-button-prev"></div>
-</div>
-<%--<script src="${pageContext.request.contextPath}/js/swiper.min.js" type="text/javascript"></script>--%>
-<script src="/js/swiper.min.js" type="text/javascript"></script>
-<script>
-    var swiper = new Swiper('.swpier-banner', {
-        pagination: '.b-pagination',
-        nextButton: '.b-button-next',
-        prevButton: '.b-button-prev',
-        loop: true,
-        paginationClickable: true,
-        spaceBetween: 30,
-        centeredSlides: true,
-        autoplay: 5000,
-        autoplayDisableOnInteraction: false
-    });
-    var swiper = new Swiper('.scroll-anli', {
-        pagination: '.s-pagination',
-        nextButton: '.s-button-next',
-        prevButton: '.s-button-prev',
-        paginationClickable: true,
-        slidesPerView: 4,
-        spaceBetween: 50,
-        breakpoints: {
-            1024: {
-                slidesPerView: 3,
-                spaceBetween: 40
-            },
-            768: {
-                slidesPerView: 2,
-                spaceBetween: 30
-            },
-            640: {
-                slidesPerView: 1,
-                spaceBetween: 20
-            },
-            320: {
-                slidesPerView: 1,
-                spaceBetween: 10
-            }
-        }
-    });
-    // 应用场景切换
-    $('.case-mian .u-nav li').click(function () {
-        $(this).addClass('cur').siblings().removeClass('cur');
-        var num = $(this).index() + 1
-        $('.case-mian .box').hide();
-        $('.case-mian .box' + num).show();
-        $('.case-mian .box' + num).addClass('hui-bounceinR');
-    });
-    //显示二维码
-    $('.litle-case-index .ani').hover(function () {
-        $(this).find('.anli_mask').css('opacity', '1');
-    }, function () {
-        $('.anli_mask').css('opacity', '0');
-    });
-
-    function showData () {
-    for(var i=0;i<3;i++){
-        var element = document.createElement("td")
-        element.value = "kjojijioj"
-    }
-  }
-</script>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/main.css">
+<%--<link rel="stylesheet" type="text/css" href="/css/main.css">--%>
 
 <div class="box">
     <table class="center">
