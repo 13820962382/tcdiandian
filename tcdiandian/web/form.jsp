@@ -44,6 +44,7 @@
     <table class="center">
       <thead>
       <tr>
+          <th>ID</th>
         <th>账户主体</th>
         <th>申请类型</th>
         <th>商户名称</th>
@@ -54,6 +55,10 @@
       </thead>
         <%
           for (int i = 0; i < list.size(); i++) {
+              out.print("<tr>");
+              out.print("<td>");
+              out.print(list.get(i).getId());
+
               out.print("<tr>");
               out.print("<td>");
               out.print(list.get(i).getAddress());

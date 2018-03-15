@@ -7,9 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DbUtil {
-    private static final  String URL ="jdbc:mysql://127.0.0.1:3306/tcdiandian";
+//    private static final  String URL ="jdbc:mysql://127.0.0.1:3306/tcdiandian";
+    private static final  String URL ="jdbc:mysql://111.230.10.17:3306/tcdiandian";
     private static final  String USER ="root";
-    private static final  String PASSWORD ="root";
+    private static final  String PASSWORD ="chen630121101";
 
     public static Connection getConnection() {
         //1.加载驱动程序
@@ -63,7 +64,7 @@ public class DbUtil {
      * 查询表单数据
      * @return
      */
-    public static List queryData(){
+    public static List queryFrom(){
         Connection connection = getConnection();
 
         String sql = "SELECT * FROM tcdiandain_form";
@@ -88,6 +89,58 @@ public class DbUtil {
         }
 
         return list;
+    }
+
+    /**
+     * 按照字段查询数据
+     * @param useName
+     * @return
+     */
+
+    public static List queryData(String useName){
+        Connection connection = getConnection();
+        GetFormMode mode = new GetFormMode();
+        List <GetFormMode> list = new ArrayList<>();
+
+        String sql = "select * from tcdaindain_form where useName = "+useName;
+        try {
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(sql);
+
+            while (resultSet.next()){
+                mode.setId(resultSet.getInt("id"));
+                mode.setAddress(resultSet.getString("address"));
+                mode.setRequestType(resultSet.getString("requestType"));
+                mode.setUseName(resultSet.getString("useName"));
+                mode.setPhoneNum(resultSet.getString("phoneNum "));
+                mode.setDescribe(resultSet.getString("desbe"));
+                mode.setCompany(resultSet.getString("company"));
+                list.add(mode);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+        return list;
+    }
+
+    /***
+     * 删除表数据
+     * @param id
+     */
+    public static void deleteData(String id){
+        Connection connection = getConnection();
+
+        String sql = "DELETE FROM tcdiandain_form WHERE ID = 'str'".replace("str",id);
+
+        try {
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 }

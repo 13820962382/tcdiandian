@@ -1,12 +1,21 @@
 package com.tcdiandian.model;
 
 public class GetFormMode {
+    private int id;
     private String address ;
     private String requestType;
     private String company;
     private String useName;
     private String phoneNum;
     private String describe;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getCompany() {
         return company;
