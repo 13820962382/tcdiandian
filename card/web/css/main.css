@@ -1,0 +1,15 @@
+body{
+    margin:0 auto;
+    font-size: x-large;
+}
+.box.banner.banner-content{
+    float: left;
+    list-style: none;
+    width: 500px;
+}
+.box.banner.banner-content.banner-item img{
+    list-style: none;
+    float: left;
+    width: 500px;
+    height: 150px;
+}
