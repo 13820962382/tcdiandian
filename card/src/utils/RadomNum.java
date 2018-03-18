@@ -17,7 +17,7 @@ public class RadomNum {
 
     public static List allCode(int number){
         List<String> list = new ArrayList();
-        for (int i = 0; i < number; i++) {
+        for (int i = 0; i <= number; i++) {
             list.add(createNum());
             System.out.println(list.get(i));
         }
