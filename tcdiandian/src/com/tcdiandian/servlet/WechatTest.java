@@ -33,7 +33,7 @@ public class WechatTest {
             System.out.print(getFormMode.getDescribe()+"  ");
         }*/
 
-      DbUtil.deleteData("3");
+      DbUtil.deleteData("6");
 
     }
 }

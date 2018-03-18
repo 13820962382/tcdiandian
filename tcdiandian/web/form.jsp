@@ -11,7 +11,7 @@
 <%@ page import="java.util.List" %>
 
 <%
-    List<GetFormMode> list = DbUtil.queryData();
+    List<GetFormMode> list = DbUtil.queryFrom();
 %>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
