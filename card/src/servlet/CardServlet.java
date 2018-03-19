@@ -1,6 +1,7 @@
 package servlet;
 
 import mode.Information;
+import utils.DbUtil;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,9 +26,12 @@ public class CardServlet extends HttpServlet {
         information.setState(request.getParameter("cardSate"));
         information.setCard_code(request.getParameter("cardCode"));
 
-        writer.print("alter("+information.getCard_code()+")");
+        DbUtil.addData(information);
+
+        writer.print("<script type=\"text/javascript\"> alert("+information.getUserName()+") </script>");
         System.out.println("提交的卷码:"+information.getCard_code());
         System.out.println("提交的人:"+information.getUserName());
+        System.out.println("提交的电话号码:"+information.getPhone());
         System.out.println("卷码的状态:"+information.getState());
     }
 

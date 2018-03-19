@@ -8,6 +8,8 @@
 <!doctype html>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@page import="utils.*" %>
+<%@ page import="java.util.List" %>
+<%@ page import="mode.CardCode" %>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -62,7 +64,7 @@
 
             <div class="item-price flex">
                 <div class="price-txt side-auto">
-             <span class="num theme-color">劵码：<% String code =  RadomNum.getCode(5);out.print(code); %></span>
+             <span class="num theme-color">劵码：<%=RadomNum.getCode() %></span>
                     <span class="unit theme-color" style="color: red;margin-left: 10px">未核销</span>
                     <span class="express">运费:包邮</span>
                 </div>
@@ -78,7 +80,7 @@
                     <dd style="margin-top: 10px"><span class="alt">联系人：</span><input  placeholder="请输入联系人姓名" type="text" name="name" class="text"
                                                             datatype="name" nullmsg="请填写姓名！" errormsg="姓名不得小于2位或大于20位！">
                     </dd>
-                    <dd style="margin-top: 10px"><span class="alt">手机号：</span><input  placeholder="请输入联系人手机号码" id="tel" type="text" name="tel"
+                    <dd style="margin-top: 10px"><span class="alt">手机号：</span><input  placeholder="请输入联系人手机号码" id="phone" type="text" name="phone"
                                                             class="text2" datatype="tel" nullmsg="请填写联系电话！"
                                                             errormsg="联系电话必须是数字和-号，且不得小于7位或大于20位！">
                     </dd>
@@ -90,7 +92,7 @@
 
                 </dl>
                 <input type="hidden" name="cardSate" value="false" />
-                <input type="hidden" name="cardCode" value="%s" %s<% RadomNum.createNum();%>/>
+                <input type="hidden" name="cardCode" value="69868147"/>
 
             </form>
         </div>
@@ -108,8 +110,6 @@
         </div>
     </div>
     </div>
-
-
 
     <footer>
         <input class="submit theme-bgcolor" type="submit" name="submit1" value="立即提交申请" onclick="document.getElementById('form1').submit()"></dd>

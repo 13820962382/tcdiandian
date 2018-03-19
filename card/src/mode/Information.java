@@ -1,11 +1,20 @@
 package mode;
 
 public class Information {
+    private int id;
     private String userName;
     private String address;
     private String phone;
     private String state;
     private String card_code;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getUserName() {
         return userName;
