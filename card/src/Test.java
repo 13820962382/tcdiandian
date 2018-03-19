@@ -52,8 +52,7 @@ public class Test {
 //        }
 
 //        DbUtil.modifyData("2");
-        List<CardCode> list = DbUtil.queryData("14656175");
-        System.out.println(list.get(0).getCard_state());
+       System.out.println(RadomNum.getCode());
     }
 
 }

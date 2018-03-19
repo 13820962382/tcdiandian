@@ -64,8 +64,8 @@
 
             <div class="item-price flex">
                 <div class="price-txt side-auto">
-             <span class="num theme-color">劵码：<%=RadomNum.getCode() %></span>
-                    <span class="unit theme-color" style="color: red;margin-left: 10px">未核销</span>
+             <span class="num theme-color">劵码：<%String code =  RadomNum.getCode();out.print(code); %></span>
+                    <span class="unit theme-color" style="color: red;margin-left: 10px"><%=RadomNum.state(code) %></span>
                     <span class="express">运费:包邮</span>
                 </div>
             </div>
