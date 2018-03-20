@@ -64,12 +64,15 @@
 
             <div class="item-price flex">
                 <div class="price-txt side-auto">
-             <span class="num theme-color">劵码：<%String code =  RadomNum.getCode();out.print(code); %></span>
-                    <span class="unit theme-color" style="color: red;margin-left: 10px"><%=RadomNum.state(code) %></span>
+             <span class="num theme-color" id="code">劵码：<%String code =  RadomNum.getCode();out.print(code); %></span>
+                    <span class="unit theme-color" style="color: red;margin-left: 10px" id="code_state"><%=RadomNum.state(code) %></span>
                     <span class="express">运费:包邮</span>
                 </div>
             </div>
 
+            <div class="prize">
+                &nbsp;<span >兑换商品：</span> <span id="goods" style="color: red;margin-left: 10px">点点网雨伞</span>
+            </div>
         </div>
     </div>
     <div class="description">
@@ -91,8 +94,8 @@
                     </dd>
 
                 </dl>
-                <input type="hidden" name="cardSate" value="false" />
-                <input type="hidden" name="cardCode" value="69868147"/>
+                <input id="is_state" type="hidden" name="cardSate" />
+                <input id="card_code" type="hidden" name="cardCode" value="69868147"/>
 
             </form>
         </div>
@@ -112,44 +115,44 @@
     </div>
 
     <footer>
-        <input class="submit theme-bgcolor" type="submit" name="submit1" value="立即提交申请" onclick="document.getElementById('form1').submit()"></dd>
+        <input class="submit theme-bgcolor" type="submit" name="submit1" value="立即提交申请" onclick="postData()"></dd>
     </footer>
 
 </div>
 
 <script type="text/javascript">
-    function check(form) {
 
-        if (form.pid.value == '') {
-            alert("请选择申请类型!");
-            form.userId.focus();
-            return false;
-        }
+    var code_state = document.getElementById("code_state");
+    var is_state = document.getElementById("is_state");
+    var code = document.getElementById("code");
+    var card_code = document.getElementById("card_code");
 
-        if (form.name.value == '') {
-            alert("请输入姓名!");
-            form.name.focus();
-            return false;
-        }
 
-        if (form.tel.value == '') {
-            alert("请输入11数字电话!");
-            form.name.focus();
-            return false;
-        }
-        var lee = document.forms["form1"].lee;
-        if (lee.checked == true) {
-        }
-        else {
-            alert('须同意代申请服务协议方可下单');
-            return false;
-        }
-
-        return true;
+    window.onload = function () {
+        is_state.value = code_state.innerHTML;
+        card_code.value = code.innerHTML.substr(3);
     }
-</script>
 
-<script type="text/javascript">
+    function postData() {
+        var form = document.getElementById("form1");
+        if(is_state.value === "未核销"){
+            if(form.name.value==""){
+                alert("请输入姓名!");
+                form.name.focus();
+                return false;
+            }else if (form.phone.value==""){
+                alert("请输入联系方式!");
+                form.name.focus();
+                return false;
+            }else if (form.address.value==""){
+                alert("请输入详细地址!");
+                form.name.focus();
+                return false;
+            }
+            document.getElementById('form1').submit()
+        }
+    }
+
     Zepto(function($) {
         /**
          * 链接转换

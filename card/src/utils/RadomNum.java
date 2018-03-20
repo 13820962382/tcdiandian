@@ -30,7 +30,7 @@ public class RadomNum {
     public static List createCode(int number){
         List<String> list = new ArrayList();
         CardCode code = new CardCode();
-        for (int i = 0; i <= number; i++) {
+        for (int i = 0; i < number; i++) {
             list.add(createNum());
             //打印劵码
             System.out.println(list.get(i));
@@ -64,6 +64,7 @@ public class RadomNum {
             String codeStr  = list.get(number).getCard_code();
             return codeStr;
         }
+        createCode(1);
         return getCode();
     }
 

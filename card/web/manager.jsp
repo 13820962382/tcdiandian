@@ -81,7 +81,7 @@
                             out.print(codeList.get(i).getCard_state());
                             out.print("</td>");
 
-                            out.print("<td> <input class=\"btn\" type=\"submit\" value=\"删除\" onclick=\"document.getElementById('form1').submit()\"> </td>");
+                            out.print("<td> <input class=\"btn\" type=\"submit\" value=\"删除\" disabled=\"true\" onclick=\"document.getElementById('form1').submit()\"> </td>");
                             out.print("</tr>"+"&nbsp;&nbsp;");
 
                     %>
@@ -133,14 +133,14 @@
                                 out.print(list.get(i).getState());
                                 out.print("</td>");
 
-                                out.print("<td> <input class=\"btn\" type=\"submit\" value=\"核销\" onclick=\"document.getElementById('form1').submit()\"> </td>");
+                                out.print("<td> <input class=\"btn\" type=\"submit\" value=\"核销\" id=\""+list.get(i).getId()+"\" onclick=\"getId()\"> </td>");
                                 out.print("</tr>"+"&nbsp;&nbsp;");
 
                         %>
                         <%--<td> <a href="javascript:formSubmit()" class="button" name="3" onclick="document.getElementById('form1').submit()">核销</a> </td>--%>
-                        <input type="hidden" name="state" value="<%=list.get(i).getId()%>">
                         <% } %>
-                        <td> <button class="btn" id="submit" type="button" onclick="submit(this)">核销</button> </td>
+                        <input id="submit_value" type="hidden" name="state" value="">
+                        <td> <button class="btn" id="submit" type="button"  onclick = "getId()">核销</button> </td>
                     </table>
 
                 </form>
@@ -176,9 +176,14 @@
 
 
     <script type="text/javascript">
-        document.getElementById("submit").onclick = function() {
-            var btn = event.target.id
-            alert(""+btn.value+btn)
+         function getId() {
+             var btnId = event.target.id
+             var submit_value = document.getElementById("submit_value")
+             var stamp = document.getElementById(btnId )
+             submit_value.value = btnId
+             // alert("已修改id: "+btnId+"")
+             document.getElementById('form1').submit()
+             stamp.disabled = "true"
         }
 
     </script>

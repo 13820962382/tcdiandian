@@ -2,6 +2,7 @@ package servlet;
 
 import utils.DbUtil;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,7 +21,9 @@ public class managerServlet extends HttpServlet {
         PrintWriter writer = response.getWriter();
 
         writer.print(request.getParameter("state"));
-//        DbUtil.modifyData(request.getParameter("3"));
+        DbUtil.modifyData(request.getParameter("state"));
+
+        response.sendRedirect("/manager.jsp");
 
     }
 

@@ -179,10 +179,12 @@ public class DbUtil {
     public static void modifyData(String id){
          connection = getConnection();
 
-        String sql = "update information set state = '已核销' where id = " +id;
+        String sql1 = "update information set state = '已核销' where id = " +id;
+        String sql2 = "UPDATE card_form A, information B SET A.card_state = B.state WHERE A.card_code= B.card_code";
         try {
             Statement statement = connection.createStatement();
-            statement.execute(sql);
+            statement.execute(sql1);
+            statement.execute(sql2);
 
         } catch (SQLException e) {
             e.printStackTrace();

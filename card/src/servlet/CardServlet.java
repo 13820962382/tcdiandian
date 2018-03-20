@@ -3,6 +3,7 @@ package servlet;
 import mode.Information;
 import utils.DbUtil;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -33,7 +34,12 @@ public class CardServlet extends HttpServlet {
         System.out.println("提交的人:"+information.getUserName());
         System.out.println("提交的电话号码:"+information.getPhone());
         System.out.println("卷码的状态:"+information.getState());
+
+//        response.sendRedirect("/index.jsp");
+
+        writer.print("您信息已提交成功");
     }
+
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

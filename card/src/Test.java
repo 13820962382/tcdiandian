@@ -52,7 +52,7 @@ public class Test {
 //        }
 
 //        DbUtil.modifyData("2");
-       System.out.println(RadomNum.getCode());
+        DbUtil.modifyData("20");
     }
 
 }
